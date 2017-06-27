@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
       user_id: current_user.id
       })
 
-      
+
     @movie.save
 
     if @movie.save
@@ -27,7 +27,6 @@ end
   def show
     @movie = Movie.find(params[:id])
     @reviews = Review.where("movie_id =?", params[:id])
-    @user = User.find(@movie.user_id)
   end
 
 end

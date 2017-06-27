@@ -27,6 +27,9 @@ class ReviewsController < ApplicationController
   # def update
   # end
   #
-  # def delete
-  # end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.delete
+    redirect_to movies_path
+  end
 end
