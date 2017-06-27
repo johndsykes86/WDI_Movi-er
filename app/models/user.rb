@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :reviews
+  has_many :movies
   has_secure_password
 
   validates :first_name, presence: true

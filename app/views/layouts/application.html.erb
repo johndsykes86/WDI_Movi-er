@@ -9,8 +9,10 @@
   </head>
   <div class="nav">
     <% if logged_in %>
+    <%= link_to "Home", movies_path %>
     <%= link_to "Profile", profile_path %>
     <%= link_to "Logout", logout_path, {method: 'DELETE'}%>
+    <%= link_to "New Movie", new_movie_path %>
     <% else %>
     <%= link_to "Home", root_path %>
     <%= link_to "Signup", signup_path %>

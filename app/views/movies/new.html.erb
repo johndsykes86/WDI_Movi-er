@@ -1,2 +1,8 @@
 <h1>Movies#new</h1>
-<p>Find me in app/views/movies/new.html.erb</p>
+
+<%= form_for @movie do |f|%>
+<div><%= f.label :title %></div>
+<div><%= f.text_field :title, placeholder: "Movie title" %></div>
+<div><%= f.text_area :synopsis, placeholder: "What is the movie about?" %></div>
+<div><%= f.submit %></div>
+<%end %>
