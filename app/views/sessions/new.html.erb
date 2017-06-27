@@ -1,0 +1,8 @@
+<h1>Sign In</h1>
+<%= form_for :login, {url: signin_path} do |f| %>
+  <div>
+    <div><%= f.email_field :email, placeholder: "Email" %></div>
+    <div><%= f.password_field :password, placeholder: "Password" %></div>
+    <div><%= f.submit "Login"%></div>
+  </div>
+<% end %>
