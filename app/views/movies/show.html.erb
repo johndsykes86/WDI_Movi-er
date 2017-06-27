@@ -1,2 +1,14 @@
-<h1><%= @movie.title %></h1>
-<p><%= @movie.synopsis %></p>
+<div>
+  <h1><%= @movie.title %></h1>
+  <p><%= @movie.synopsis %></p>
+  <%= link_to "New Review", new_movie_path(:id => @movie.id) %>
+</div>
+
+<div>
+  <% @reviews.each do |r| %>
+    <h2><%= r.title %> </h2>
+    <h4><%= @user.first_name %> <%= @user.last_name %> <%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h4>
+    <p><%= r.body %></p>
+
+  <% end %>
+</div>

@@ -1,8 +1,7 @@
 <h1>Movies#index</h1>
 <% @movies.each do |m| %>
   <div>
-    <h1><%= link_to m.title, "movie/#{m.id}" %></h1>
+    <h1><%= link_to m.title, movie_path(:id=>m.id) %></h1>
     <p><%= m.synopsis %></p>
-
   </div>
 <% end %>

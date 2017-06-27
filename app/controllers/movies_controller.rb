@@ -5,14 +5,16 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new({
-      title: params[:movie][:titl],
+      title: params[:movie][:title],
       synopsis: params[:movie][:synopsis],
       user_id: current_user.id
       })
+
+      validates :movie_id, presence: true, length: { maximum: 160 }
     @movie.save
 
     if @movie.save
-      redirect_to root_path
+      redirect_to movies_path
     else
       redirect_to new_movie_path
   end
@@ -24,6 +26,8 @@ end
 
   def show
     @movie = Movie.find(params[:id])
+    @reviews = Review.where("movie_id =?", params[:id])
+    @user = User.find(@movie.user_id)
   end
 
 end

@@ -15,11 +15,14 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   delete '/logout/' => 'sessions#destroy', as: :logout
 
-#Movie routes
+#Movie & Review routes
   get '/movies' => 'movies#index', as: :movies
   get '/movie/new' => 'movies#new', as: :new_movie
-  post '/movies' => 'movies#create'
-  get '/movie/:id' => 'movies#show', as: :movie
+  post '/movies/' => 'movies#create'
+  get '/movies/:id' => 'movies#show', as: :movie
+  get '/movies/:id/new_review' => 'reviews#create'
+
+
 
 
 
