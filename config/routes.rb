@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'movies/index'
+
+  get 'movies/create'
+
+  get 'movies/new'
+
   root 'users#index'
   get '/signup' => 'users#new', as: :signup
   post '/signup' => 'users#create'
