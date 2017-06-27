@@ -1,16 +1,32 @@
 class ReviewsController < ApplicationController
   def new
+    @review = Review.new
   end
 
   def create
-  end
+    @review = Review.new({
+      title: params[:review][:title],
+      body: params[:review][:body],
+      user_id: current_user.id,
+      movie_id: params[:id]
+      })
 
-  def edit
-  end
 
-  def update
-  end
+    @review.save
 
-  def delete
+    if @review.save
+      redirect_to movie_path(params[:id])
+    else
+      redirect_to new_review_path
   end
+  end
+  #
+  # def edit
+  # end
+  #
+  # def update
+  # end
+  #
+  # def delete
+  # end
 end

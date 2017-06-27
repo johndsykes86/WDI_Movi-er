@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "movies#index"
+
   #User creation routes routes
   get '/signup' => 'users#new', as: :signup
   post '/signup' => 'users#create'
@@ -13,12 +15,13 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   delete '/logout/' => 'sessions#destroy', as: :logout
 
-#Movie & Review routes
+#Movie routes
   get '/movies' => 'movies#index', as: :movies
   get '/movie/new' => 'movies#new', as: :new_movie
   post '/movies/' => 'movies#create'
   get '/movies/:id' => 'movies#show', as: :movie
 
+#Review routes
   get '/movies/:id/new_review' => 'reviews#new', as: :new_review
   post '/movies/:id/new_review' => 'reviews#create'
   get '/movies/:id/edit_review' => 'reviews#edit', as: :edit_review
