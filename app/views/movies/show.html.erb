@@ -1,7 +1,7 @@
 <div>
   <h1><%= @movie.title %></h1>
   <p><%= @movie.synopsis %></p>
-  <%= link_to "New Review", new_movie_path(:id => @movie.id) %>
+  <%= link_to "New Review", new_review_path(:id => @movie.id) %>
 </div>
 
 <div>

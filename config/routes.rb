@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
-
   #User creation routes routes
   get '/signup' => 'users#new', as: :signup
   post '/signup' => 'users#create'
@@ -20,7 +18,13 @@ Rails.application.routes.draw do
   get '/movie/new' => 'movies#new', as: :new_movie
   post '/movies/' => 'movies#create'
   get '/movies/:id' => 'movies#show', as: :movie
-  get '/movies/:id/new_review' => 'reviews#create'
+
+  get '/movies/:id/new_review' => 'reviews#new', as: :new_review
+  post '/movies/:id/new_review' => 'reviews#create'
+  get '/movies/:id/edit_review' => 'reviews#edit', as: :edit_review
+  put '/movies/:id/edit_review' => 'reviews#update'
+  delete '/movies/:id/delete_review' => 'reviews#delete'
+
 
 
 

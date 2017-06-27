@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
       user_id: current_user.id
       })
 
-      validates :movie_id, presence: true, length: { maximum: 160 }
+      
     @movie.save
 
     if @movie.save
