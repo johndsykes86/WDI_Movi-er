@@ -16,6 +16,14 @@
   <h2>Profile Info</h2>
   <div>
     <%= form_for @user, url: profile_path do |f| %>
+     <div>
+       <div class="">
+
+        <%= image_tag @user.avatar_url.url(:thumb) %>
+       </div>
+        <%= f.label :avatar_url, "Profile picture:" %>
+       <%= f.file_field :avatar_url, placeholder: "Profile picture" %>
+     </div>
     <div>
       <%= f.label :email %>
       <%= f.text_field :email %>

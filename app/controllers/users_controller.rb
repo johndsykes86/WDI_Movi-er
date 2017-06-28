@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    @user.update(email: params[:user][:email], password: params[:user][:password] )
+    @user.update(email: params[:user][:email], password: params[:user][:password], avatar_url: params[:user][:avatar_url] )
     redirect_to profile_path
     flash[:notice] = "Account information updated successfully"
   end
