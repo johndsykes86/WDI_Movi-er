@@ -4,7 +4,19 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    nah
+       @review = Review.new({
+       title: params[:review][:title],
+       body: params[:review][:body],
+       user_id: current_user.id,
+       movie_id: params[:movie_id]
+       })
+       @review.save
+
+      if @review.save
+        redirect_to movie_path(params[:movie_id])
+      else
+        redirect_to new_review_path(params[:movie_id])
+      end
   end
 
   def edit
@@ -15,7 +27,11 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(title: params[:review][:title], body: params[:review][:body])
-    redirect_to movies_path
+    if @review.update
+      redirect_to movie_path(params[:movie_id])
+    else
+      redirect_to new_review_path(params[:movie_id])
+    end
   end
 
   def destroy
