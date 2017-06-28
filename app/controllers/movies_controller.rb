@@ -30,6 +30,7 @@ end
   def show
     @movie = Movie.find(params[:id])
     @reviews = Review.where("movie_id =?", params[:id])
+
   end
 
 end

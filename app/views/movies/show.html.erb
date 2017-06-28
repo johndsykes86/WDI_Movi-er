@@ -8,6 +8,7 @@
 
 <div>
   <% @reviews.each do |r| %>
+  <%= image_tag User.find(r.user_id).avatar_url.url(:thumb) %>
     <h2><%= r.title %> </h2>
     <h4><%= link_to User.find(r.user_id).user_name, profile_path(r.user_id) %></h4>
     <h5><%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h5>
