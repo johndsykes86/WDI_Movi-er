@@ -13,14 +13,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.update({
-
-      title: params[:review][:title],
-      body: params[:review][:body],
-      id: params[:id]
-      })
-
-
+    @review = Review.find(params[:id])
+    @review.update(title: params[:review][:title], body: params[:review][:body])
+    redirect_to movies_path
   end
 
   def destroy
