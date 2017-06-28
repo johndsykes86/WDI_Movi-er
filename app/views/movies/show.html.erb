@@ -1,7 +1,9 @@
 <div>
   <h1><%= @movie.title %></h1>
   <p><%= @movie.synopsis %></p>
-  <%= link_to "New Review", new_movie_review_path(:movie_id => @movie.id) %>
+  <% if logged_in %>
+      <%= link_to "New Review", new_movie_review_path(:movie_id => @movie.id) %>
+  <% end %>
 </div>
 
 <div>
@@ -10,7 +12,7 @@
     <h4><%= User.find(r.user_id).first_name %> <%= User.find(r.user_id).last_name %></h4>
     <h5><%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h5>
     <p><%= r.body %></p>
-    <%if r.user_id == current_user.id %>
+    <%if logged_in && r.user_id == current_user.id %>
       <%= link_to "Edit Review", edit_movie_review_path(r.movie_id, r.id) %>
       <%= link_to "Delete Review", movie_review_path(r.movie_id, r.id), {method: "DELETE"} %>
     <% end %>

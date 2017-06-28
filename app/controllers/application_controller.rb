@@ -11,8 +11,8 @@ end
     !!current_user
   end
 
-def authorize
-  unless logged_in redirect_to login_oath
-end
+  def authorize
+    unless logged_in redirect_to signin_path
+  end
 
 end

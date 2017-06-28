@@ -10,6 +10,18 @@
 
 
   <body>
+    <div class="nav">
+      <%= link_to "Home", movies_path %>
+      <% if logged_in %>
+        <%= link_to "Profile", profile_path %>
+        <%= link_to "New Movie", new_movie_path %>
+        <%= link_to "Log Out", logout_path %>
+
+      <% else %>
+        <%= link_to "Log In", signin_path %>
+        <%= link_to "Sign Up", signup_path %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

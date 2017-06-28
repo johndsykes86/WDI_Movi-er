@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+
+
   def new
     @review = Review.new
   end
@@ -27,16 +29,12 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(title: params[:review][:title], body: params[:review][:body])
-    if @review.update
-      redirect_to movie_path(params[:movie_id])
-    else
-      redirect_to new_review_path(params[:movie_id])
-    end
+    redirect_to movie_path(params[:movie_id])
   end
 
   def destroy
     @review = Review.find(params[:id])
-    @review.delete
-    redirect_to movies_path
+    @review.destroy
+    redirect_to movie_path(params[:movie_id])
   end
 end
