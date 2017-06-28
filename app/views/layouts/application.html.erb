@@ -8,34 +8,37 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
   <body>
     <div class="nav">
-      <%= link_to "Home", movies_path %>
-      <% if logged_in %>
-        <%= link_to "Profile", profile_path(current_user.id) %>
-        <%= link_to "New Movie", new_movie_path %>
-        <%= link_to "Log Out", logout_path %>
 
-      <% else %>
-        <%= link_to "Log In", signin_path %>
-        <%= link_to "Sign Up", signup_path %>
+      <% if logged_in %>
+      Logged in as:
+      <%= current_user.user_name %>
+      <%= link_to "Home", movies_path %>
+      <%= link_to "Profile", profile_path(current_user.id) %>
+      <%= link_to "New Movie", new_movie_path %>
+      <%= link_to "Log Out", logout_path %>
+
+    <% else %>
+      <%= link_to "Home", movies_path %>
+      <%= link_to "Log In", signin_path %>
+      <%= link_to "Sign Up", signup_path %>
       <% end %>
     </div>
 
-	<header>
-    <%# ----- add these lines here: ----- %>
+    <header>
+      <%# ----- add these lines here: ----- %>
 
-	<% if notice %>
+      <% if notice %>
       <%= notice %>
-	<% end %>
+      <% end %>
 
-	<% if alert %>
+      <% if alert %>
       <%= alert %>
-	<% end %>
+      <% end %>
 
-	<%# ----- end of added lines ----- %>
-	</header>
+      <%# ----- end of added lines ----- %>
+    </header>
 
     <%= yield %>
   </body>

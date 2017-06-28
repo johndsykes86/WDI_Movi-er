@@ -12,7 +12,7 @@
 
 <%= current_user.id %>
 
-<% if current_user.id = profile_path(current_user.id) %>
+<% if profile_path(current_user.id) == profile_path(params[:id]) %>
 <div>
   <h2>Profile Info</h2>
   <div>
