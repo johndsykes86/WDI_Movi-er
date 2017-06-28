@@ -1,7 +1,5 @@
 class MoviesController < ApplicationController
 
-
-
   def index
     @movies = Movie.all
   end
@@ -17,8 +15,10 @@ class MoviesController < ApplicationController
     @movie.save
 
     if @movie.save
+      flash[:notice] = "Movie saved successfully"
       redirect_to movies_path
     else
+      flash[:alert] = "Something went wrong, please try again..."
       redirect_to new_movie_path
   end
 end

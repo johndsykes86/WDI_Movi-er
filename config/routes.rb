@@ -7,12 +7,17 @@ Rails.application.routes.draw do
 end
   post '/movies/:movie_id/reviews/new' => 'reviews#create', as: :reviews
   patch '/movies/:movie_id/reviews/:id/edit' => 'reviews#update'
+
+  #Signup/Signin Routes
   get '/signin' => 'sessions#new', as: :signin
   post '/signin' => 'sessions#create'
   get '/signup' => 'users#new', as: :signup
+  post '/signup' => 'users#create'
   get '/signout' => 'sessions#destroy', as: :logout
 
+# User Profile paths
   get 'user/profile' => 'users#show', as: :profile
+  patch 'user/profile' => 'users#update'
 
 
 

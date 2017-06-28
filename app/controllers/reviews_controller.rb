@@ -15,8 +15,10 @@ class ReviewsController < ApplicationController
        @review.save
 
       if @review.save
+        flash[:notice] = "Review created successfully"
         redirect_to movie_path(params[:movie_id])
       else
+        flash[:alert] = "Something went wrong, please try again..."
         redirect_to new_review_path(params[:movie_id])
       end
   end
@@ -30,11 +32,13 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.update(title: params[:review][:title], body: params[:review][:body])
     redirect_to movie_path(params[:movie_id])
+    flash[:notice] = "Your review has been updated"
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
+    flash[:alert] = "Your review has been deleted"
     redirect_to movie_path(params[:movie_id])
   end
 end

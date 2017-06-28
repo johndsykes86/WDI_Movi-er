@@ -17,9 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      redirect_to root_path
+      redirect_to login_path
+      flash[:notice] = "Account infomation created successfully, please log in"
     else
       redirect_to signup_path
+      flash[:alert] = "We're missing something, please check to make sure your information is correct and try again"
     end
   end
 
@@ -27,6 +29,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
+
+    @user.update(email: params[:user][:email], password: params[:user][:password] )
+    redirect_to profile_path
+    flash[:notice] = "Account information updated successfully"
   end
 
   def destroy
