@@ -24,9 +24,9 @@ Rails.application.routes.draw do
 #Review routes
   get '/movies/:id/new_review' => 'reviews#new', as: :new_review
   post '/movies/:id/new_review' => 'reviews#create'
-  get '/movies/:id/edit_review' => 'reviews#edit', as: :edit_review
-  put '/movies/:id/edit_review' => 'reviews#update'
-  delete '/movies/:id/delete_review' => 'reviews#destroy', as: :delete_review
+  get '/movies/edit_review/:id' => 'reviews#edit', as: :edit_review
+  patch '/movies/edit_review/:id' => 'reviews#update'
+  delete '/movies/delete_review/:id' => 'reviews#destroy', as: :delete_review
 
 
 

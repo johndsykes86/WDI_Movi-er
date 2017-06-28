@@ -11,8 +11,8 @@
     <h5><%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h5>
     <p><%= r.body %></p>
     <%if r.user_id == current_user.id %>
-      <%= link_to "Edit Review" %>
-      <%= link_to "Delete Review", delete_review_path(r.id), {method: "DELETE"} %>
+      <%= link_to "Edit Review", edit_review_path(r.id) %>
+      <%= link_to "Delete Review", delete_review_path(r.id), {method: "PATCH"} %>
     <% end %>
   <% end %>
 </div>
