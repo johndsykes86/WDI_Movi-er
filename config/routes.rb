@@ -16,8 +16,8 @@ end
   get '/signout' => 'sessions#destroy', as: :logout
 
 # User Profile paths
-  get 'user/profile' => 'users#show', as: :profile
-  patch 'user/profile' => 'users#update'
+  get 'user/:id/profile' => 'users#show', as: :profile
+  patch 'user/:id/profile' => 'users#update'
 
 
 
