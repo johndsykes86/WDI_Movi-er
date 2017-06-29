@@ -1,39 +1,50 @@
-<h1>User profile</h1>
+<div class="container">
+  <h1>User profile</h1>
 
-<div>
-  <h2>Your Reviews</h2>
-  <div>
-     <% @user.reviews.each do |r| %>
-      <h3>Movie: <%= Movie.find(r.movie_id).title %></h3>
-      <p><%= r.body %></p>
-     <% end %>
+  <div class='container jumbotron'>
+    <h2>Your Reviews</h2>
+    <div class = "row">
+      <% @user.reviews.each do |r| %>
+      <div class="col-md-4">
+        <h3>Movie:
+          <%= Movie.find(r.movie_id).title %></h3>
+        <p><%= r.body %></p>
+      </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
+  <% if profile_path(current_user.id) == profile_path(params[:id]) %>
+  <div class="container jumbotron">
+    <h2>Profile Info</h2>
 
-<% if profile_path(current_user.id) == profile_path(params[:id]) %>
-<div>
-  <h2>Profile Info</h2>
-  <div>
     <%= form_for @user, url: profile_path do |f| %>
-     <div>
-       <div class="">
+      <div class="row">
 
-        <%= image_tag @user.avatar_url.url(:thumb) %>
-       </div>
-        <%= f.label :avatar_url, "Profile picture:" %>
-       <%= f.file_field :avatar_url, placeholder: "Profile picture" %>
-     </div>
-    <div>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-    <div>
-      <%= f.label :password %>
-      <%= f.password_field :password%>
-    </div>
-    <%= f.submit %>
+              <div class="col-md-4">
+                <div>
+                  <%= image_tag @user.avatar_url.url(:thumb) %>
+                </div>
+                <div class = "form-group pull-left">
+                  <%= f.label :avatar_url, "Profile picture:" %>
+                  <%= f.file_field :avatar_url, placeholder: "Profile picture" %>
+                </div>
+
+              </div>
+              <div class="col-md-8">
+                <div class = "form-group">
+                  <%= f.label :email %>
+                  <%= f.text_field :email, class: "form-control"  %>
+                </div>
+                <div class = "form-group">
+                  <%= f.label :password %>
+                  <%= f.password_field :password, class: "form-control"%><br>
+                  <%= f.submit %>
+                </div>
+              </div>
+
+              <% end %>
+            </div>
+      </div>
     <% end %>
   </div>
-</div>
-<% end %>

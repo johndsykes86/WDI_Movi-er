@@ -9,40 +9,8 @@
   </head>
 
   <body>
-    <!-- <div class="nav">
-
-      <% if logged_in %>
-      Logged in as:
-      <%= current_user.user_name %>
-      <%= link_to "Home", movies_path %>
-      <%= link_to "Profile", profile_path(current_user.id) %>
-      <%= link_to "New Movie", new_movie_path %>
-      <%= link_to "Log Out", logout_path %>
-
-    <% else %>
-      <%= link_to "Home", movies_path %>
-      <%= link_to "Log In", signin_path %>
-      <%= link_to "Sign Up", signup_path %>
-      <% end %>
-    </div> -->
-
     <%= render "layouts/navbar" %>
     <%= render 'layouts/flash' %>
-
-
-      <%# ----- add these lines here: ----- %>
-
-      <!-- <% if notice %>
-      <%= notice %>
-      <% end %>
-
-      <% if alert %>
-      <%= alert %>
-      <% end %> -->
-
-      <%# ----- end of added lines ----- %>
-
-
     <%= yield %>
   </body>
 </html>
