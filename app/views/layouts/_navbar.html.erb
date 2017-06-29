@@ -8,12 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <li><%= link_to "Movi-er", movies_path, class: "navbar-brand"%></li>
-    </div>
 
+    </div>
     <% if logged_in %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><%= link_to "Movi-er", movies_path, class: "navbar-brand"%></li>
+        <li><%= image_tag current_user.avatar_url.url(:thumb), class: "small-image"%></li>
         <li><%= link_to "Profile", profile_path(current_user.id) %></li>
         <li><%= link_to "New Movie", new_movie_path %></li>
       </ul>
