@@ -1,21 +1,32 @@
-<div>
-  <h1><%= @movie.title %></h1>
-  <p><%= @movie.synopsis %></p>
-  <% if logged_in %>
-      <%= link_to "New Review", new_movie_review_path(:movie_id => @movie.id) %>
-  <% end %>
+<div class="container">
+  <div class = 'jumbotron'>
+    <h1><%= @movie.title %></h1>
+    <p><%= @movie.synopsis %></p>
+    <% if logged_in %>
+    <%= link_to "New Review", new_movie_review_path(:movie_id => @movie.id) %>
+    <% end %>
+  </div>
 </div>
 
-<div>
-  <% @reviews.each do |r| %>
-  <%= image_tag User.find(r.user_id).avatar_url.url(:thumb) %>
-    <h2><%= r.title %> </h2>
-    <h4><%= link_to User.find(r.user_id).user_name, profile_path(r.user_id) %></h4>
-    <h5><%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h5>
-    <p><%= r.body %></p>
-    <%if logged_in && r.user_id == current_user.id %>
-      <%= link_to "Edit Review", edit_movie_review_path(r.movie_id, r.id) %>
-      <%= link_to "Delete Review", movie_review_path(r.movie_id, r.id), {method: "DELETE"} %>
+<div class="container">
+  <div class="row">
+    <% @reviews.each do |r| %>
+    <div class="col-md-2">
+      <%= image_tag User.find(r.user_id).avatar_url.url(:thumb),
+       class: 'pull-left'%>
+    </div>
+        <div class = 'col-md-10'>
+          <h2><%= r.title %> </h2>
+          <h4><%= link_to User.find(r.user_id).user_name, profile_path(r.user_id) %></h4>
+          <h5><%= r.created_at.strftime("%B %e %Y %m:%M %p ") %></h5>
+          <p><%= r.body %></p>
+          <%if logged_in && r.user_id == current_user.id %>
+            <%= link_to "Edit Review", edit_movie_review_path(r.movie_id, r.id) %>
+            <%= link_to "Delete Review", movie_review_path(r.movie_id, r.id), {method: "DELETE"} %>
+          <% end %>
+        </div>
+    </div>
+
     <% end %>
-  <% end %>
+  </div>
 </div>

@@ -1,7 +1,12 @@
-<h1>Movies#index</h1>
-<% @movies.each do |m| %>
-  <div>
+
+<div class="container">
+  <h1>Movies#index</h1>
+  <div class="row">
+    <% @movies.each do |m| %>
+    <div class="col-md-12">
     <h1><%= link_to m.title, movie_path(:id=>m.id) %></h1>
     <p><%= m.synopsis %></p>
   </div>
-<% end %>
+  <% end %>
+</div>
+</div>
