@@ -6,15 +6,12 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new({
+      poster: params[:movie][:poster],
       title: params[:movie][:title],
       synopsis: params[:movie][:synopsis],
-      user_id: current_user.id,
-      poster: params[:movie][:poster]
+      user_id: current_user.id
       })
-
-
     @movie.save
-
     if @movie.save
       flash[:notice] = "Movie saved successfully"
       redirect_to movies_path
