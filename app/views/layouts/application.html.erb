@@ -27,20 +27,21 @@
     </div> -->
 
     <%= render "layouts/navbar" %>
+    <%= render 'layouts/flash' %>
 
-    <header>
+
       <%# ----- add these lines here: ----- %>
 
-      <% if notice %>
+      <!-- <% if notice %>
       <%= notice %>
       <% end %>
 
       <% if alert %>
       <%= alert %>
-      <% end %>
+      <% end %> -->
 
       <%# ----- end of added lines ----- %>
-    </header>
+
 
     <%= yield %>
   </body>
