@@ -16,15 +16,9 @@
 
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
-@import "bootswatch/cyborg/variables";
+@import "bootswatch/superhero/variables";
 @import "bootstrap";
-@import "bootswatch/cyborg/bootswatch";
-
-
-//general styles
-// body {
-//   background-color: dodgerblue;
-// }
+@import "bootswatch/superhero/bootswatch";
 
 //Movie index style
 .movies {
