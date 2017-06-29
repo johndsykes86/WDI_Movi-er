@@ -8,7 +8,8 @@ class MoviesController < ApplicationController
     @movie = Movie.new({
       title: params[:movie][:title],
       synopsis: params[:movie][:synopsis],
-      user_id: current_user.id
+      user_id: current_user.id,
+      poster: params[:movie][:poster]
       })
 
 

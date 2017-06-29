@@ -7,6 +7,9 @@
   <%= form_for @movie do |f|%>
   <span id="helpBlock" class="help-block">Add a new movie so your fellow Movi-ers can have their say!</span>
   <br>
+  <div><%= f.label :poster %></div>
+  <div><%= f.file_field :poster, placeholder: "Movie poster image", class: "form-control" %></div>
+  <br>
   <div><%= f.label :title %></div>
   <div><%= f.text_field :title, placeholder: "Movie title", class: "form-control" %></div>
   <br>
