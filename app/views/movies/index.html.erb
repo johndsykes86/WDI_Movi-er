@@ -3,10 +3,17 @@
   <h1>Current movies</h1>
   <div class="row">
     <% @movies.each do |m| %>
-    <div class="col-md-12">
-    <h1><%= link_to m.title, movie_path(:id=>m.id) %></h1>
-    <p><%= m.synopsis %></p>
-  </div>
+    <div class="movies">
+      <div class="col-md-2">
+        <%= image_tag m.poster.url(:medium),
+         class: 'pull-right'%>
+      </div>
+      <div class="col-md-10">
+      <h1><%= link_to m.title, movie_path(:id=>m.id) %></h1>
+      <p><%= m.synopsis %></p>
+    </div>
+    </div>
+  <div class="clearfix"></div>
   <% end %>
-</div>
+
 </div>
