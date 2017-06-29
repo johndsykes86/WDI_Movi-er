@@ -39,6 +39,10 @@ gem 'dotenv-rails', group: :development, require: 'dotenv/rails-now'
 gem 'paperclip'
 gem 'aws-sdk'
 
+
+#bootswatch gem
+gem 'bootswatch-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
