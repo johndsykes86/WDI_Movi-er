@@ -47,7 +47,21 @@
 
 // log-in and signup classes
 
-.sign-in, .sign-up {
-  width: 300px;
+.sign-in, .sign-up, .new-review {
+  background: #1a69df;
+}
+
+.sign-up {
+  width: 470px;
+  height: 470px;
+}
+
+.sign-in {
+  width: 330px;
+  height: 230px;
+}
+
+.new-review {
+  width: 330px;
   height: 300px;
 }

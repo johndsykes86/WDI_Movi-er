@@ -5,14 +5,14 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-end
+
 
   def logged_in
     !!current_user
   end
 
   def authorize
-    unless logged_in redirect_to signin_path
+    redirect_to signin_path unless logged_in
   end
 
 
