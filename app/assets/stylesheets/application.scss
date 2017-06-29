@@ -18,9 +18,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+//Movie index style
 .movies {
   margin: 30px;
 }
+
+//Movie view styles
 
 .movie {
   padding: 30px
@@ -30,6 +34,7 @@
   margin-left: 20px;
 }
 
+// review styles
 .review {
   margin: 10px;
   padding: 100px;
@@ -37,4 +42,11 @@
 
 .review a {
   margin: 10px;
+}
+
+// log-in and signup classes
+
+.sign-in {}
+  width: 300px;
+  height: 300px;
 }

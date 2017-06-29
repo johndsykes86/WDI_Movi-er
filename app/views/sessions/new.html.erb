@@ -1,8 +1,13 @@
-<h1>Sign In</h1>
-<%= form_for :login, {url: signin_path} do |f| %>
-  <div>
-    <div><%= f.email_field :email, placeholder: "Email" %></div>
-    <div><%= f.password_field :password, placeholder: "Password" %></div>
-    <div><%= f.submit "Login"%></div>
+
+<div class="container sign-in">
+  <div class="signup-form">
+    <h1 class = "text-center">Sign In</h1>
+    <%= form_for :login, {url: signin_path} do |f| %>
+      <div class = "form-group">
+        <div><%= f.email_field :email, placeholder: "Email", class: "form-control" %></div>
+        <div><%= f.password_field :password, placeholder: "Password", class: "form-control"%></div><br>
+        <div><%= f.submit "Login", class: "center-block submit"%></div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
