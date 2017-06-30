@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :reviews
-  has_many :movies
+  has_many :reviews, :dependent => :destroy
+  has_many :movies, :dependent => :destroy
   has_secure_password
 
   validates :first_name, presence: true

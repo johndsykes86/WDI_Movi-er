@@ -1,24 +1,11 @@
-# README
+# WDI Movi-er
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[link to application](https://enigmatic-river-26198.herokuapp.com/)
+[]()
 
-Things you may want to cover:
+##Technologies used.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Approach taken.
+Installation/startup instructions (this will be a little more complicated than with project 1!). How can a potential employer run your code locally on their own machine?
+Unsolved problems and next steps.
+A link to your publicly accessible trello board.
