@@ -8,7 +8,7 @@
 
 [link to ERD](https://www.gliffy.com/go/share/svk0bt6paksq0w272o5t)
 
----------------------------
+__________________
 
 ### Languages and dependencies
  - HTML
@@ -26,7 +26,7 @@
 - Gliffy
 - SLACK OVERFLOW: THE ABSOLUTE BOY OF GETTING OUT OF A JAM
 
------------------
+__________________
 
 ## So what is this?
 My app is called Movi-er. Its sort of a mashup between Rotten Tomatoes and Twitter. You can leave reviews on movies, but have to do it in 160 characters or less. Cool, right?
@@ -49,10 +49,8 @@ In the end, the only stretch goals I was able to push to sprint was the avatar s
 Until I had my friends test my app and they nearly broke everything I thought was working but thats what QA is for. The testing, while annoying from the standpoint of seeing something you've worked on be reduced to meme trash within hours, helped me pinpoint somethings I assumed paperclip took care of.
 
 A dev's work is never done so I dont know why I thought I was done. But that's it. That was my approach.
------------------
 
 
------------------
 
 
 ## Installation/startup instructions
