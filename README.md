@@ -9,7 +9,6 @@
 [link to ERD](https://www.gliffy.com/go/share/svk0bt6paksq0w272o5t)
 
 
-##Technologies used.
 
 ### Languages and dependencies
  - HTML
@@ -26,6 +25,10 @@
 - MyBalsamiq
 - Gliffy
 - SLACK OVERFLOW: THE ABSOLUTE BOY OF GETTING OUT OF A JAM
+
+
+## So what is this?
+My app is called Movi-er. Its sort of a mashup between Rotten Tomatoes and Twitter. You can leave reviews on movies, but have to do it in 160 characters or less. Cool, right? 
 
 ##Approach taken.
 
