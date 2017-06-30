@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   has_attached_file :poster,
   styles: { medium: "300x300>", thumb: "100x100>" },
