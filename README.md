@@ -28,9 +28,9 @@
 
 
 ## So what is this?
-My app is called Movi-er. Its sort of a mashup between Rotten Tomatoes and Twitter. You can leave reviews on movies, but have to do it in 160 characters or less. Cool, right? 
+My app is called Movi-er. Its sort of a mashup between Rotten Tomatoes and Twitter. You can leave reviews on movies, but have to do it in 160 characters or less. Cool, right?
 
-##Approach taken.
+## Approach taken.
 
 After having a hell of a time on my last project, I decided to learn from my mistakes and map out my path before hand. While i did deviate a bit with the UI, this kept me on track throughout my project.
 
@@ -50,12 +50,12 @@ A dev's work is never done so I dont know why I thought I was done. But that's i
 
 
 
-##Installation/startup instructions
+## Installation/startup instructions
 
 ??
 
 
-##Unsolved problems and next steps.
+## Unsolved problems and next steps.
 1. add a search function and/or include OMDB functionality
 2. add upvote/downvote
 3. add a following feature (able to see when people post new reviews)
