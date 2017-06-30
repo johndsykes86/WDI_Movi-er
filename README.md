@@ -50,7 +50,7 @@ Until I had my friends test my app and they nearly broke everything I thought wa
 
 A dev's work is never done so I dont know why I thought I was done. But that's it. That was my approach.
 
-
+__________________
 
 
 ## Installation/startup instructions
